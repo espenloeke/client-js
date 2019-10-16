@@ -159,7 +159,14 @@ async function authorize(env, params = {}, _noRedirect = false)
     }
 
     if (iss) {
-        debug("Making %s launch...", launch ? "EHR" : "standalone");
+        debug("FHIR server is %s", iss);
+
+        if (launch) {
+            debug("Making EHR launch with launch context %s", launch);
+        }
+        else {
+            debug("No launch parameter value, making standalone launch...");
+        }
     }
 
     // append launch scope if needed
