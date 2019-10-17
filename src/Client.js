@@ -294,7 +294,7 @@ class FhirClient
                 }
                 else {
                     // The server should have returned the patient!
-                    debug("The ID of the selected patient is not available. Please check if your server supports that.");
+                    debug("Token response does not contain the resource id of the selected patient is. Please check if your server supports that.");
                 }
                 return null;
             }
